@@ -1,0 +1,17 @@
+<div class="flex">
+  <div class="w-1/2">
+    @if (todoList().length) {
+      <mat-list role="list">
+        @for (todo of todoList(); track todo.id) {
+          <app-todo-detail [todo]="todo" />
+        }
+      </mat-list>
+    }
+    @else {
+      <p>Chargement en abandon</p>
+    }
+  </div>
+  <div class="w-1/2">
+    <app-todo-create (todoCreateEvent)="todoCreated($event)" />
+  </div>
+</div>

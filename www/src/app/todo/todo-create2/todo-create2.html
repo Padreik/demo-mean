@@ -1,0 +1,12 @@
+<form class="flex">
+  <mat-form-field class="w-1/2">
+    <mat-label>Titre</mat-label>
+    <input matInput [formField]="todoForm.title">
+    @if (todoForm.title().errors()) {
+      <mat-error>{{ todoForm.title().errors()[0] }}</mat-error>
+    }
+  </mat-form-field>
+  <div class="w-1/2 flex items-center justify-center">
+    <button matButton="filled" color="primary">Basic</button>
+  </div>
+</form>

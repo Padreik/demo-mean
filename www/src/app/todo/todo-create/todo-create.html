@@ -1,0 +1,12 @@
+<form [formGroup]="todoCreateForm" (submit)="save()" class="flex">
+  <mat-form-field class="w-1/2">
+    <mat-label>Titre</mat-label>
+    <input matInput formControlName="title">
+    @if (todoCreateForm.get('title')?.invalid) {
+      <mat-error>Le titre est requis</mat-error>
+    }
+  </mat-form-field>
+  <div class="w-1/2 flex items-center justify-center">
+    <button matButton="filled" color="primary" [disabled]="!buttonEnabled()">Ajouter</button>
+  </div>
+</form>

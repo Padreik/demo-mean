@@ -1,0 +1,4 @@
+npm install -g @nestjs/cli
+nestjs new api
+nest g resource todos
+npm install --save @nestjs/swagger
